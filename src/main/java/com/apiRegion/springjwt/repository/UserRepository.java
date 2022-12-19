@@ -3,6 +3,7 @@ package com.apiRegion.springjwt.repository;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.apiRegion.springjwt.models.User;
@@ -14,4 +15,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	Boolean existsByUsername(String username);
 
 	Boolean existsByEmail(String email);
+
+	/*@Query(value = "SELECT COUNT(*) FROM `users`",nativeQuery = true)
+	int lesUsers();
+	 */
 }

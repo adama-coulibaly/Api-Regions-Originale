@@ -25,15 +25,7 @@ public class RegionsControler {
 
     @Autowired
     RegionsService regionsService;
-    //Controller
-            /*
-            @Autowired
-            public RegionsControler(RegionsService regionsService)
-            {
-                this.regionsService=regionsService;
-            }
-             */
-//Classe d'ajout des regions
+
 
     @PostMapping(path = "/creer", name = "create")
     @ResponseStatus(HttpStatus.CREATED)
@@ -87,7 +79,7 @@ public class RegionsControler {
         if(regionsRepository.findByNomregions(nomregions) == null){
 
           //  String u = "C:/Users/adcoulibaly/Desktop/ERP/ApplicationERPInterface/src/assets/images";
-            String uploaDir = "C:/Users/adcoulibaly/Desktop/Adama/CLONES_API/Backend-regions/Api-Region-Original/src/main/resources/images";
+            String uploaDir = "C:/Users/adcoulibaly/Desktop/Adama/CLONES_API/API_RegionsInterface/regionInterface/src/assets/Images";
             //String uploaDir = new ClassPathResource("files/").getFile().getAbsolutePath();
             ConfigImage.saveimg(uploaDir, nomfile, file);
             //  entiteServiceImplement.ajouter(entite);

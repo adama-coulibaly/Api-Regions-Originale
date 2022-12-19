@@ -61,6 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/projet/odk/Pays/**").permitAll()
 				.antMatchers("/projet/odk/Commentaire/**").permitAll()
 				.antMatchers("/projet/odk/Regions/**").permitAll()
+				.antMatchers("/projet/odk/Habitants/**").permitAll()
 			.antMatchers("/api/test/**").permitAll()
 			.anyRequest().authenticated();
 
