@@ -29,13 +29,6 @@ public class CommentaireServiceImpl implements CommentaireService {
     @Override
     public String addNewCommentaire(Commentaire commentaire) {
 
-        System.out.println("test **************************************** "+commentaire);
-
-
-        System.out.println("REGION **************************************** "+ commentaire.getRegions());
-
-       //  regionsRepository.findById(commentaire.getRegions().getId_regions());
-
         regionsService.increment(commentaire.getRegions(), commentaire.getRegions().getId_regions());
 
             commentaireRepository.save(commentaire);

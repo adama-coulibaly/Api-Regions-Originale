@@ -17,7 +17,7 @@ public class Commentaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idcommentaire;
-    private String objet;
+ //   private String objet;
     private String description;
 
 

@@ -9,4 +9,7 @@ public interface CRUD_Habitant {
     List<Habitants> maListe();
     Habitants modifierHabitant(Habitants habitants, Long id_habitants);
     void supprimerHabitant(Long id_habitants);
+
+   // List<Habitants> trouverParHabitants(Long id_regions);
+
 }

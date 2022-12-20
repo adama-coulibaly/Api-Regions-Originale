@@ -50,5 +50,12 @@ public class HabitantsService implements CRUD_Habitant {
         this.habitantsRepository.delete(habitants.get());
     }
 
+/*    @Override
+    public List<Habitants> trouverParHabitants(Long id_regions) {
+        return habitantsRepository.findByRegions(id_regions);
+    }
+
+ */
+
 
 }

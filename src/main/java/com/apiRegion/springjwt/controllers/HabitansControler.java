@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -47,6 +48,13 @@ public class HabitansControler {
     {
         this.habitantsService.supprimerHabitant(id_habitants);
     }
+
+  /*  @GetMapping(path ="/listerParRegion/{id_regions}", name = "lister")
+    public List<Habitants> trouverParHabitants(@PathVariable("id_regions") Long id_regions) {
+        return habitantsService.trouverParHabitants(id_regions);
+    }
+
+   */
 
 
 
