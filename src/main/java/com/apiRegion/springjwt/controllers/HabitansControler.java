@@ -1,6 +1,7 @@
 package com.apiRegion.springjwt.controllers;
 
 
+import com.apiRegion.springjwt.models.Regions;
 import com.apiRegion.springjwt.security.services.HabitantsService;
 import com.apiRegion.springjwt.models.Habitants;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RequestMapping(path = "/projet/odk/Habitants",name ="Habitants")
 public class HabitansControler {
 
+    @Autowired
     private HabitantsService habitantsService;
 
     @Autowired
@@ -23,9 +25,11 @@ public class HabitansControler {
     }
 
 
-    @PostMapping(path = "/creer")
-    public Habitants ajouterHabitant(@RequestBody Habitants habitants)
+    @PostMapping(path = "/creer/{id_regions}")
+    public Habitants ajouterHabitant(@RequestBody Habitants habitants,@PathVariable("id_regions") Regions id_regions)
     {
+        Regions rd = new Regions();
+        habitants.setRegions(id_regions);
         return this.habitantsService.ajouterHabitant(habitants);
     }
     @GetMapping(path ="/liste", name = "list")

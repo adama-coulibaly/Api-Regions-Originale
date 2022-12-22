@@ -21,6 +21,7 @@ public class HabitantsService implements CRUD_Habitant {
 
     @Override
     public Habitants ajouterHabitant(Habitants habitants) {
+
         return this.habitantsRepository.save(habitants);
     }
 

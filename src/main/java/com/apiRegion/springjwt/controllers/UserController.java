@@ -1,14 +1,14 @@
 package com.apiRegion.springjwt.controllers;
 
-import com.apiRegion.springjwt.repository.CommentaireRepository;
+import com.apiRegion.springjwt.models.User;
 import com.apiRegion.springjwt.repository.UserRepository;
-import com.apiRegion.springjwt.security.services.UserDetailsServiceImpl;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -16,10 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class UserController {
 
+    @Autowired
     private UserRepository userRepository;
 
     @GetMapping("nbreUser")
     public int nbreUser(){
+        return this.userRepository.findAll().size();
+    }
+    @GetMapping("lesUser")
+    public List<User> lesUtilisateurs(){
         return this.userRepository.lesUsers();
     }
 

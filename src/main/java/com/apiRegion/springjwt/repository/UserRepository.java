@@ -1,5 +1,6 @@
 package com.apiRegion.springjwt.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,7 +17,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	Boolean existsByEmail(String email);
 
-	@Query(value = "SELECT COUNT(*) FROM `users`",nativeQuery = true)
-	int lesUsers();
+	@Query(value = "SELECT * FROM `users`",nativeQuery = true)
+	List<User> lesUsers();
 
 }
